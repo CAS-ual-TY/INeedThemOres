@@ -57,11 +57,11 @@ public class INTOItemGroup extends ItemGroup
             
             if(s1[s1.length - 1].equals(s2[s2.length - 1]))
             {
-                return s1[0].compareTo(s2[0]);
+                return p1.compareTo(p2);
             }
             else
             {
-                return p1.compareTo(p2);
+                return s1[s1.length - 1].compareTo(s2[s2.length - 1]);
             }
         });
     }
