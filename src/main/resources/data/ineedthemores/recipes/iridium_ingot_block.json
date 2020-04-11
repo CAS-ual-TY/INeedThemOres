@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ineedthemores_iridium",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ineedthemores:iridium_ingot"
+    }
+  },
+  "result": {
+    "item": "ineedthemores:iridium_block"
+  }
+}

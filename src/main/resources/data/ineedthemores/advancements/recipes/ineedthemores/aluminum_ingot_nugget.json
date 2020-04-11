@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:aluminum_ingot_nugget"
+    ]
+  },
+  "criteria": {
+    "aluminum_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:aluminum_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:aluminum_ingot_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "aluminum_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

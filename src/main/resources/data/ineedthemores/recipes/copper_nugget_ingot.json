@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ineedthemores_copper",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ineedthemores:copper_nugget"
+    }
+  },
+  "result": {
+    "item": "ineedthemores:copper_ingot"
+  }
+}

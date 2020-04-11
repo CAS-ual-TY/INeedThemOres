@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ineedthemores_silver",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ineedthemores:silver_nugget"
+    }
+  },
+  "result": {
+    "item": "ineedthemores:silver_ingot"
+  }
+}

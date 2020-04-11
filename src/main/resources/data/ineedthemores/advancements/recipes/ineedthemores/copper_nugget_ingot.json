@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:copper_nugget_ingot"
+    ]
+  },
+  "criteria": {
+    "copper_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:copper_nugget"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:copper_nugget_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "copper_nugget",
+      "has_the_recipe"
+    ]
+  ]
+}

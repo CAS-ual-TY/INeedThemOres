@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:nickel_block_ingot"
+    ]
+  },
+  "criteria": {
+    "nickel_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:nickel_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:nickel_block_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nickel_block",
+      "has_the_recipe"
+    ]
+  ]
+}

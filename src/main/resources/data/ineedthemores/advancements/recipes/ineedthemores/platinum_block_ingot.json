@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:platinum_block_ingot"
+    ]
+  },
+  "criteria": {
+    "platinum_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:platinum_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:platinum_block_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "platinum_block",
+      "has_the_recipe"
+    ]
+  ]
+}

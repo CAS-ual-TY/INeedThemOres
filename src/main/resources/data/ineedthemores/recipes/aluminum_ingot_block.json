@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ineedthemores_aluminum",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ineedthemores:aluminum_ingot"
+    }
+  },
+  "result": {
+    "item": "ineedthemores:aluminum_block"
+  }
+}

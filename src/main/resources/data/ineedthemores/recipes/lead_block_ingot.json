@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_lead",
+  "ingredients": [
+    {
+      "item": "ineedthemores:lead_block"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:lead_ingot",
+    "count": 9
+  }
+}
