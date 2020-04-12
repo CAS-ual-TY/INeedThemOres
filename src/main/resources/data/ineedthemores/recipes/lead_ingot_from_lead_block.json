@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_lead",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:storage_blocks/lead"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:lead_ingot",
+    "count": 9
+  }
+}

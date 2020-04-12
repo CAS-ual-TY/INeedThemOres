@@ -18,7 +18,7 @@ public class INTORegistries
     {
         IForgeRegistry<Block> registry = event.getRegistry();
         
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
             material.registerBlocks(registry);
         }
@@ -29,7 +29,7 @@ public class INTORegistries
     {
         IForgeRegistry<Item> registry = event.getRegistry();
         
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
             material.registerItems(registry);
         }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ineedthemores_tin",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "tag": "ineedthemores:nuggets/tin"
+    }
+  },
+  "result": {
+    "item": "ineedthemores:tin_ingot"
+  }
+}

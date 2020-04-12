@@ -26,7 +26,7 @@ public class INeedThemOres
         
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(material::updateFromConfig);
             ModLoadingContext.get().registerConfig(Type.COMMON, material.configSpec, INeedThemOres.MOD_ID + "-" + material.name.replace("_", "-") + ".toml");
@@ -44,21 +44,22 @@ public class INeedThemOres
     
     private void createMaterials()
     {
-        new INTOOre(INeedThemOres.MOD_ID, "Copper", 1, 7, 25, 48, 96);
-        new INTOOre(INeedThemOres.MOD_ID, "Tin", 1, 7, 20, 16, 48);
-        new INTOOre(INeedThemOres.MOD_ID, "Aluminum", 1, 6, 4, 0, 64);
-        new INTOOre(INeedThemOres.MOD_ID, "Platinum", 3, 3, 8, 0, 24);
-        new INTOOre(INeedThemOres.MOD_ID, "Silver", 7, 2, 8, 8, 32);
-        new INTOOre(INeedThemOres.MOD_ID, "Lead", 2, 7, 8, 16, 32);
-        new INTOOre(INeedThemOres.MOD_ID, "Nickel", 2, 5, 2, 8, 24);
-        new INTOOre(INeedThemOres.MOD_ID, "Iridium", 3, 3, 6, 0, 16);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Copper", 1, 7, 25, 48, 96);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Tin", 1, 7, 20, 16, 48);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Aluminum", 1, 5, 4, 0, 64);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Platinum", 3, 3, 8, 0, 24);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Silver", 2, 7, 8, 8, 32);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Lead", 2, 7, 8, 16, 32);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Nickel", 2, 5, 2, 8, 24);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Iridium", 3, 3, 6, 0, 16);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Uranium", 2, 3, 8, 0, 64);
     }
     
     private void setup(final FMLCommonSetupEvent event)
     {
-        for(Biome biome : ForgeRegistries.BIOMES)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
-            for(INTOOre material : INTOOre.MATERIALS)
+            for(Biome biome : ForgeRegistries.BIOMES)
             {
                 material.registerGeneration(biome);
             }

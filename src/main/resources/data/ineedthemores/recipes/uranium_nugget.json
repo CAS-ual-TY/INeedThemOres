@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_uranium",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:ingots/uranium"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:uranium_nugget",
+    "count": 9
+  }
+}

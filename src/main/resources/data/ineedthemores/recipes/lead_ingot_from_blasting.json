@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "ineedthemores:ores/lead"
+  },
+  "result": "ineedthemores:lead_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

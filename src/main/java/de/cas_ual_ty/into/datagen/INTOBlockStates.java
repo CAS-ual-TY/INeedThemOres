@@ -1,6 +1,6 @@
 package de.cas_ual_ty.into.datagen;
 
-import de.cas_ual_ty.into.INTOOre;
+import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -14,18 +14,24 @@ public class INTOBlockStates extends BlockStateProvider
     }
     
     @Override
+    public String getName()
+    {
+        return "I Need Them Ores Block States";
+    }
+    
+    @Override
     protected void registerStatesAndModels()
     {
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
             this.getVariantBuilder(material.getBlock())
                 .forAllStates(state -> ConfiguredModel.builder()
-                    .modelFile(this.models().getExistingFile(this.modLoc("block/" + material.getBlockRL().getPath())))
+                    .modelFile(this.models().getExistingFile(this.modLoc("block/" + material.blockRL.getPath())))
                     .build());
             
             this.getVariantBuilder(material.getOre())
                 .forAllStates(state -> ConfiguredModel.builder()
-                    .modelFile(this.models().getExistingFile(this.modLoc("block/" + material.getOreRL().getPath())))
+                    .modelFile(this.models().getExistingFile(this.modLoc("block/" + material.oreRL.getPath())))
                     .build());
         }
     }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_aluminum",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:storage_blocks/aluminum"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:aluminum_ingot",
+    "count": 9
+  }
+}

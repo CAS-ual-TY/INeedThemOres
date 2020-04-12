@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_aluminum",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:ingots/aluminum"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:aluminum_nugget",
+    "count": 9
+  }
+}

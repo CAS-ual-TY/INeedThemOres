@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:uranium_ingot_from_blasting"
+    ]
+  },
+  "criteria": {
+    "has_uranium_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:uranium_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:uranium_ingot_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_uranium_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

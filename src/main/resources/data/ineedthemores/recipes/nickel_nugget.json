@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_nickel",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:ingots/nickel"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:nickel_nugget",
+    "count": 9
+  }
+}

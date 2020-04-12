@@ -1,6 +1,6 @@
 package de.cas_ual_ty.into.datagen;
 
-import de.cas_ual_ty.into.INTOOre;
+import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -22,21 +22,21 @@ public class INTOItemModels extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
-            this.getBuilder(material.getIngotRL().getPath())
+            this.getBuilder(material.ingotRL.getPath())
                 .parent(new UncheckedModelFile("item/generated"))
-                .texture("layer0", this.modLoc("item/" + material.getIngotRL().getPath()));
+                .texture("layer0", this.modLoc("item/" + material.ingotRL.getPath()));
             
-            this.getBuilder(material.getNuggetRL().getPath())
+            this.getBuilder(material.nuggetRL.getPath())
                 .parent(new UncheckedModelFile("item/generated"))
-                .texture("layer0", this.modLoc("item/" + material.getNuggetRL().getPath()));
+                .texture("layer0", this.modLoc("item/" + material.nuggetRL.getPath()));
             
-            this.getBuilder(material.getBlockRL().getPath())
-                .parent(this.getExistingFile(this.modLoc("block/" + material.getBlockRL().getPath())));
+            this.getBuilder(material.blockRL.getPath())
+                .parent(this.getExistingFile(this.modLoc("block/" + material.blockRL.getPath())));
             
-            this.getBuilder(material.getOreRL().getPath())
-                .parent(this.getExistingFile(this.modLoc("block/" + material.getOreRL().getPath())));
+            this.getBuilder(material.oreRL.getPath())
+                .parent(this.getExistingFile(this.modLoc("block/" + material.oreRL.getPath())));
         }
     }
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_tin",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:storage_blocks/tin"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:tin_ingot",
+    "count": 9
+  }
+}

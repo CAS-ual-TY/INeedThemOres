@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import de.cas_ual_ty.into.INTOOre;
+import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
@@ -45,12 +45,18 @@ public class INTOLootTables extends LootTableProvider
         this.generator = dataGeneratorIn;
     }
     
+    @Override
+    public String getName()
+    {
+        return "I Need Them Ores Loot Tables";
+    }
+    
     public void addTables()
     {
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
-            this.lootTables.put(material.getBlock(), this.createStandardTable(material.getBlockRL().getPath(), material.getBlock()));
-            this.lootTables.put(material.getOre(), this.createStandardTable(material.getOreRL().getPath(), material.getOre()));
+            this.lootTables.put(material.getBlock(), this.createStandardTable(material.blockRL.getPath(), material.getBlock()));
+            this.lootTables.put(material.getOre(), this.createStandardTable(material.oreRL.getPath(), material.getOre()));
         }
     }
     
@@ -100,11 +106,5 @@ public class INTOLootTables extends LootTableProvider
                 INTOLootTables.LOGGER.error("Couldn't write loot table {}", path, e);
             }
         });
-    }
-    
-    @Override
-    public String getName()
-    {
-        return "MyTutorial LootTables";
     }
 }

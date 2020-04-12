@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "ineedthemores:ores/tin"
+  },
+  "result": "ineedthemores:tin_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

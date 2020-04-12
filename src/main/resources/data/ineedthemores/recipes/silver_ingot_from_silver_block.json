@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_silver",
+  "ingredients": [
+    {
+      "tag": "ineedthemores:storage_blocks/silver"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:silver_ingot",
+    "count": 9
+  }
+}

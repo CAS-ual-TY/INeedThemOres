@@ -1,6 +1,6 @@
 package de.cas_ual_ty.into.datagen;
 
-import de.cas_ual_ty.into.INTOOre;
+import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
@@ -22,15 +22,15 @@ public class INTOBlockModels extends BlockModelProvider
     @Override
     protected void registerModels()
     {
-        for(INTOOre material : INTOOre.MATERIALS)
+        for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
-            this.getBuilder(material.getBlockRL().getPath())
+            this.getBuilder(material.blockRL.getPath())
                 .parent(new UncheckedModelFile("block/cube_all"))
-                .texture("all", this.modLoc("block/" + material.getBlockRL().getPath()));
+                .texture("all", this.modLoc("block/" + material.blockRL.getPath()));
             
-            this.getBuilder(material.getOreRL().getPath())
+            this.getBuilder(material.oreRL.getPath())
                 .parent(new UncheckedModelFile("block/cube_all"))
-                .texture("all", this.modLoc("block/" + material.getOreRL().getPath()));
+                .texture("all", this.modLoc("block/" + material.oreRL.getPath()));
         }
     }
 }

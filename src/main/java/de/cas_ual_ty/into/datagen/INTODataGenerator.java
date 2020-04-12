@@ -17,7 +17,9 @@ public class INTODataGenerator
         generator.addProvider(new INTOBlockModels(generator, INeedThemOres.MOD_ID, event.getExistingFileHelper()));
         generator.addProvider(new INTOBlockStates(generator, INeedThemOres.MOD_ID, event.getExistingFileHelper()));
         generator.addProvider(new INTOItemModels(generator, INeedThemOres.MOD_ID, event.getExistingFileHelper()));
-        generator.addProvider(new INTORecipes(generator, INeedThemOres.MOD_ID));
+        generator.addProvider(new INTOBlockTags(generator));
+        generator.addProvider(new INTOItemTags(generator));
+        generator.addProvider(new INTORecipes(generator));
         generator.addProvider(new INTOLanguage(generator, INeedThemOres.MOD_ID));
         generator.addProvider(new INTOLootTables(generator));
     }

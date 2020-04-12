@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "ineedthemores:ores/copper"
+  },
+  "result": "ineedthemores:copper_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}
