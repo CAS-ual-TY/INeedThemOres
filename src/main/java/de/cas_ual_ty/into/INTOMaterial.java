@@ -79,12 +79,12 @@ public class INTOMaterial
         this.ingotRL = new ResourceLocation(this.modId, this.name + "_ingot");
         this.nuggetRL = new ResourceLocation(this.modId, this.name + "_nugget");
         
-        this.block_tag = new Tag<>(new ResourceLocation(this.modId, "storage_blocks/" + this.name));
-        this.ore_tag = new Tag<>(new ResourceLocation(this.modId, "ores/" + this.name));
-        this.block_item_tag = new Tag<>(new ResourceLocation(this.modId, "storage_blocks/" + this.name));
-        this.ore_item_tag = new Tag<>(new ResourceLocation(this.modId, "ores/" + this.name));
-        this.ingot_tag = new Tag<>(new ResourceLocation(this.modId, "ingots/" + this.name));
-        this.nugget_tag = new Tag<>(new ResourceLocation(this.modId, "nuggets/" + this.name));
+        this.block_tag = new Tag<>(new ResourceLocation("forge", "storage_blocks/" + this.name));
+        this.ore_tag = new Tag<>(new ResourceLocation("forge", "ores/" + this.name));
+        this.block_item_tag = new Tag<>(new ResourceLocation("forge", "storage_blocks/" + this.name));
+        this.ore_item_tag = new Tag<>(new ResourceLocation("forge", "ores/" + this.name));
+        this.ingot_tag = new Tag<>(new ResourceLocation("forge", "ingots/" + this.name));
+        this.nugget_tag = new Tag<>(new ResourceLocation("forge", "nuggets/" + this.name));
         
         Pair<Config, ForgeConfigSpec> pair = new ForgeConfigSpec.Builder().configure((builder) -> new Config(builder, this));
         this.config = pair.getLeft();
