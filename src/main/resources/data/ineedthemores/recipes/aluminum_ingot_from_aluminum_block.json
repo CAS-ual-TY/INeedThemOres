@@ -3,7 +3,7 @@
   "group": "ineedthemores_aluminum",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/aluminum"
+      "tag": "forge:storage_blocks/aluminum"
     }
   ],
   "result": {

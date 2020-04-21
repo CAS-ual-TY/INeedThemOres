@@ -3,7 +3,7 @@
   "group": "ineedthemores_uranium",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/uranium"
+      "tag": "forge:ingots/uranium"
     }
   ],
   "result": {

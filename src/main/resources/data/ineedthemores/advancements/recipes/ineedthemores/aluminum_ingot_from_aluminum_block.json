@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "ineedthemores:storage_blocks/aluminum"
+            "tag": "forge:storage_blocks/aluminum"
           }
         ]
       }

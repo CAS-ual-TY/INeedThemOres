@@ -3,7 +3,7 @@
   "group": "ineedthemores_copper",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/copper"
+      "tag": "forge:ingots/copper"
     }
   ],
   "result": {

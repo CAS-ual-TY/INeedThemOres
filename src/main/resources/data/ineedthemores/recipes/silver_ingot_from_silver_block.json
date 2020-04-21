@@ -3,7 +3,7 @@
   "group": "ineedthemores_silver",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/silver"
+      "tag": "forge:storage_blocks/silver"
     }
   ],
   "result": {

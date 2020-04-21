@@ -17,6 +17,8 @@
   "block.ineedthemores.tin_ore": "Tin Ore",
   "block.ineedthemores.uranium_block": "Block of Uranium",
   "block.ineedthemores.uranium_ore": "Uranium Ore",
+  "block.ineedthemores.zinc_block": "Block of Zinc",
+  "block.ineedthemores.zinc_ore": "Zinc Ore",
   "item.ineedthemores.aluminum_ingot": "Aluminum Ingot",
   "item.ineedthemores.aluminum_nugget": "Aluminum Nugget",
   "item.ineedthemores.copper_ingot": "Copper Ingot",
@@ -35,5 +37,7 @@
   "item.ineedthemores.tin_nugget": "Tin Nugget",
   "item.ineedthemores.uranium_ingot": "Uranium Ingot",
   "item.ineedthemores.uranium_nugget": "Uranium Nugget",
+  "item.ineedthemores.zinc_ingot": "Zinc Ingot",
+  "item.ineedthemores.zinc_nugget": "Zinc Nugget",
   "itemGroup.ineedthemores": "I Need Them Ores"
 }

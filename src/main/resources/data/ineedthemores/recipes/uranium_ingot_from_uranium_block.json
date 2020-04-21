@@ -3,7 +3,7 @@
   "group": "ineedthemores_uranium",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/uranium"
+      "tag": "forge:storage_blocks/uranium"
     }
   ],
   "result": {

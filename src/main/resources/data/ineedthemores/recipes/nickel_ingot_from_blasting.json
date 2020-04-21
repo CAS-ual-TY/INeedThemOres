@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "ineedthemores:ores/nickel"
+    "tag": "forge:ores/nickel"
   },
   "result": "ineedthemores:nickel_ingot",
   "experience": 1.0,

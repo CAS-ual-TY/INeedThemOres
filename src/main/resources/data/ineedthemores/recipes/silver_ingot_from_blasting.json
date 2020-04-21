@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "ineedthemores:ores/silver"
+    "tag": "forge:ores/silver"
   },
   "result": "ineedthemores:silver_ingot",
   "experience": 1.0,

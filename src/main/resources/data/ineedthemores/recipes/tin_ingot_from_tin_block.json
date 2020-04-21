@@ -3,7 +3,7 @@
   "group": "ineedthemores_tin",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/tin"
+      "tag": "forge:storage_blocks/tin"
     }
   ],
   "result": {

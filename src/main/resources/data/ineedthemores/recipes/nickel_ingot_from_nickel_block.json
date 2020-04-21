@@ -3,7 +3,7 @@
   "group": "ineedthemores_nickel",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/nickel"
+      "tag": "forge:storage_blocks/nickel"
     }
   ],
   "result": {

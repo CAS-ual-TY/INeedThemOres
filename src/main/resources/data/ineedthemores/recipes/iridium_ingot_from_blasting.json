@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "ineedthemores:ores/iridium"
+    "tag": "forge:ores/iridium"
   },
   "result": "ineedthemores:iridium_ingot",
   "experience": 1.0,

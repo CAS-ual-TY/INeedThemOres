@@ -3,7 +3,7 @@
   "group": "ineedthemores_silver",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/silver"
+      "tag": "forge:ingots/silver"
     }
   ],
   "result": {

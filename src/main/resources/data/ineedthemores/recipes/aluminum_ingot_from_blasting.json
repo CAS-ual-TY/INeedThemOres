@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "ineedthemores:ores/aluminum"
+    "tag": "forge:ores/aluminum"
   },
   "result": "ineedthemores:aluminum_ingot",
   "experience": 1.0,

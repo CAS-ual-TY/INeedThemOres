@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "ineedthemores:ores/copper"
+    "tag": "forge:ores/copper"
   },
   "result": "ineedthemores:copper_ingot",
   "experience": 1.0,

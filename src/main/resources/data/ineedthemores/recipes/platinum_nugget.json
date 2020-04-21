@@ -3,7 +3,7 @@
   "group": "ineedthemores_platinum",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/platinum"
+      "tag": "forge:ingots/platinum"
     }
   ],
   "result": {

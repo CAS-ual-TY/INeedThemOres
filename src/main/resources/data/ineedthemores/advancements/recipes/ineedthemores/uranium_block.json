@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "ineedthemores:ingots/uranium"
+            "tag": "forge:ingots/uranium"
           }
         ]
       }

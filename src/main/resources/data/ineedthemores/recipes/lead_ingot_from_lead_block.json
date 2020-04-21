@@ -3,7 +3,7 @@
   "group": "ineedthemores_lead",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/lead"
+      "tag": "forge:storage_blocks/lead"
     }
   ],
   "result": {

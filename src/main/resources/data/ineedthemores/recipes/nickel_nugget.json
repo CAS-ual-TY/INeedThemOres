@@ -3,7 +3,7 @@
   "group": "ineedthemores_nickel",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/nickel"
+      "tag": "forge:ingots/nickel"
     }
   ],
   "result": {

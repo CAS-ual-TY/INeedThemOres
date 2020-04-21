@@ -3,7 +3,7 @@
   "group": "ineedthemores_iridium",
   "ingredients": [
     {
-      "tag": "ineedthemores:storage_blocks/iridium"
+      "tag": "forge:storage_blocks/iridium"
     }
   ],
   "result": {

@@ -3,7 +3,7 @@
   "group": "ineedthemores_tin",
   "ingredients": [
     {
-      "tag": "ineedthemores:ingots/tin"
+      "tag": "forge:ingots/tin"
     }
   ],
   "result": {
