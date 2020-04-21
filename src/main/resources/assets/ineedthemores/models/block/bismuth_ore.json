@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ineedthemores:block/bismuth_ore"
+  }
+}

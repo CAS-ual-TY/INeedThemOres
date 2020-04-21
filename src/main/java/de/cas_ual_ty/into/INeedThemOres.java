@@ -54,6 +54,7 @@ public class INeedThemOres
         new INTOMaterial(INeedThemOres.MOD_ID, "Iridium", 3, 3, 6, 0, 16);
         new INTOMaterial(INeedThemOres.MOD_ID, "Uranium", 2, 3, 8, 0, 64);
         new INTOMaterial(INeedThemOres.MOD_ID, "Zinc", 1, 7, 9, 16, 48);
+        new INTOMaterial(INeedThemOres.MOD_ID, "Bismuth", 1, 9, 4, 16, 64);
     }
     
     private void setup(final FMLCommonSetupEvent event)

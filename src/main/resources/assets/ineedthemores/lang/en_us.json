@@ -1,6 +1,8 @@
 {
   "block.ineedthemores.aluminum_block": "Block of Aluminum",
   "block.ineedthemores.aluminum_ore": "Aluminum Ore",
+  "block.ineedthemores.bismuth_block": "Block of Bismuth",
+  "block.ineedthemores.bismuth_ore": "Bismuth Ore",
   "block.ineedthemores.copper_block": "Block of Copper",
   "block.ineedthemores.copper_ore": "Copper Ore",
   "block.ineedthemores.iridium_block": "Block of Iridium",
@@ -21,6 +23,8 @@
   "block.ineedthemores.zinc_ore": "Zinc Ore",
   "item.ineedthemores.aluminum_ingot": "Aluminum Ingot",
   "item.ineedthemores.aluminum_nugget": "Aluminum Nugget",
+  "item.ineedthemores.bismuth_ingot": "Bismuth Ingot",
+  "item.ineedthemores.bismuth_nugget": "Bismuth Nugget",
   "item.ineedthemores.copper_ingot": "Copper Ingot",
   "item.ineedthemores.copper_nugget": "Copper Nugget",
   "item.ineedthemores.iridium_ingot": "Iridium Ingot",
