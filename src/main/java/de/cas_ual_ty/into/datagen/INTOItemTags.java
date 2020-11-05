@@ -1,14 +1,16 @@
 package de.cas_ual_ty.into.datagen;
 
 import de.cas_ual_ty.into.INTOMaterial;
+import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class INTOItemTags extends ItemTagsProvider
 {
-    public INTOItemTags(DataGenerator generatorIn)
+    public INTOItemTags(DataGenerator generator, BlockTagsProvider blockTagsProvider, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn);
+        super(generator, blockTagsProvider, modid, existingFileHelper);
     }
     
     @Override
@@ -24,10 +26,10 @@ public class INTOItemTags extends ItemTagsProvider
         {
             //            this.copy(material.block_tag, material.block_item_tag); Does not work. Why?
             //            this.copy(material.ore_tag, material.ore_item_tag); Does not work. Why?
-            this.getBuilder(material.block_item_tag).add(material.getBlock().asItem());
-            this.getBuilder(material.ore_item_tag).add(material.getOre().asItem());
-            this.getBuilder(material.ingot_tag).add(material.getIngot());
-            this.getBuilder(material.nugget_tag).add(material.getNugget());
+            this.getOrCreateBuilder(material.block_item_tag).add(material.getBlock().asItem());
+            this.getOrCreateBuilder(material.ore_item_tag).add(material.getOre().asItem());
+            this.getOrCreateBuilder(material.ingot_tag).add(material.getIngot());
+            this.getOrCreateBuilder(material.nugget_tag).add(material.getNugget());
         }
     }
 }

@@ -5,22 +5,24 @@ import java.util.LinkedList;
 import org.apache.commons.lang3.tuple.Pair;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Block.Properties;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag.INamedTag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
-import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.feature.template.RuleTest;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -35,7 +37,7 @@ public class INTOMaterial
     public final String name;
     public final String lang;
     
-    protected FillerBlockType fillerBlockType;
+    protected RuleTest fillerBlockType;
     protected int harvestLevel;
     protected int veignSize;
     protected int triesAmount;
@@ -53,19 +55,19 @@ public class INTOMaterial
     public final ResourceLocation ingotRL;
     public final ResourceLocation nuggetRL;
     
-    public final Tag<Block> block_tag;
-    public final Tag<Block> ore_tag;
-    public final Tag<Item> block_item_tag;
-    public final Tag<Item> ore_item_tag;
-    public final Tag<Item> ingot_tag;
-    public final Tag<Item> nugget_tag;
+    public final INamedTag<Block> block_tag;
+    public final INamedTag<Block> ore_tag;
+    public final INamedTag<Item> block_item_tag;
+    public final INamedTag<Item> ore_item_tag;
+    public final INamedTag<Item> ingot_tag;
+    public final INamedTag<Item> nugget_tag;
     
-    public INTOMaterial(String modId, String name, FillerBlockType fillerBlockType, int harvestLevel, int veignSize, int triesAmount, int bottom, int top)
+    public INTOMaterial(String modId, String name, RuleTest field241882a, int harvestLevel, int veignSize, int triesAmount, int bottom, int top)
     {
         this.modId = modId;
         this.name = name.replace(" ", "_").toLowerCase();
         this.lang = name;
-        this.fillerBlockType = fillerBlockType;
+        this.fillerBlockType = field241882a;
         
         this.harvestLevel = harvestLevel;
         this.veignSize = veignSize;
@@ -79,12 +81,12 @@ public class INTOMaterial
         this.ingotRL = new ResourceLocation(this.modId, this.name + "_ingot");
         this.nuggetRL = new ResourceLocation(this.modId, this.name + "_nugget");
         
-        this.block_tag = new Tag<>(new ResourceLocation("forge", "storage_blocks/" + this.name));
-        this.ore_tag = new Tag<>(new ResourceLocation("forge", "ores/" + this.name));
-        this.block_item_tag = new Tag<>(new ResourceLocation("forge", "storage_blocks/" + this.name));
-        this.ore_item_tag = new Tag<>(new ResourceLocation("forge", "ores/" + this.name));
-        this.ingot_tag = new Tag<>(new ResourceLocation("forge", "ingots/" + this.name));
-        this.nugget_tag = new Tag<>(new ResourceLocation("forge", "nuggets/" + this.name));
+        this.block_tag = BlockTags.makeWrapperTag("forge:storage_blocks/" + this.name);
+        this.ore_tag = BlockTags.makeWrapperTag("forge:ores/" + this.name);
+        this.block_item_tag = ItemTags.makeWrapperTag("forge:storage_blocks/" + this.name);
+        this.ore_item_tag = ItemTags.makeWrapperTag("forge:ores/" + this.name);
+        this.ingot_tag = ItemTags.makeWrapperTag("forge:ingots/" + this.name);
+        this.nugget_tag = ItemTags.makeWrapperTag("forge:nuggets/" + this.name);
         
         Pair<Config, ForgeConfigSpec> pair = new ForgeConfigSpec.Builder().configure((builder) -> new Config(builder, this));
         this.config = pair.getLeft();
@@ -95,7 +97,7 @@ public class INTOMaterial
     
     public INTOMaterial(String modId, String name, int harvestLevel, int veignSize, int triesAmount, int bottom, int top)
     {
-        this(modId, name, FillerBlockType.NATURAL_STONE, harvestLevel, veignSize, triesAmount, bottom, top);
+        this(modId, name, FillerBlockType.field_241882_a, harvestLevel, veignSize, triesAmount, bottom, top);
     }
     
     public void updateFromConfig(ModConfig.ModConfigEvent event)
@@ -113,8 +115,8 @@ public class INTOMaterial
     
     public void registerBlocks(IForgeRegistry<Block> registry)
     {
-        registry.register(this.block = new Block(Properties.create(Material.IRON).harvestTool(ToolType.PICKAXE).harvestLevel(this.harvestLevel).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL)).setRegistryName(this.blockRL));
-        registry.register(this.ore = new Block(Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).harvestLevel(this.harvestLevel).hardnessAndResistance(3.0F, 3.0F)).setRegistryName(this.oreRL));
+        registry.register(this.block = new Block(Block.Properties.create(Material.IRON).harvestTool(ToolType.PICKAXE).harvestLevel(this.harvestLevel).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL)).setRegistryName(this.blockRL));
+        registry.register(this.ore = new Block(Block.Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE).harvestLevel(this.harvestLevel).hardnessAndResistance(3.0F, 3.0F)).setRegistryName(this.oreRL));
     }
     
     public void registerItems(IForgeRegistry<Item> registry)
@@ -125,12 +127,20 @@ public class INTOMaterial
         registry.register(this.nugget = new Item(new Item.Properties().group(INeedThemOres.itemGroup)).setRegistryName(this.nuggetRL));
     }
     
-    public void registerGeneration(Biome biome)
+    public void registerGeneration(BiomeGenerationSettingsBuilder builder)
     {
         if(this.enabled)
         {
-            // Y = random.nextInt(maximum - topOffset) + bottomOffset;
-            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(this.fillerBlockType, this.getOre().getDefaultState(), this.veignSize)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(this.triesAmount, this.bottom, 0, this.top - this.bottom))));
+            builder.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+                Feature.ORE.withConfiguration(
+                    new OreFeatureConfig(
+                        OreFeatureConfig.FillerBlockType.field_241882_a,
+                        this.ore.getDefaultState(),
+                        this.veignSize))
+                    .withPlacement(Placement.field_242907_l.configure(
+                        new TopSolidRangeConfig(this.bottom, this.bottom, this.top)))
+                    .func_242728_a()
+                    .func_242731_b(this.triesAmount));
         }
     }
     

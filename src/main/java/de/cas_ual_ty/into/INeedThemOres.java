@@ -1,15 +1,18 @@
 package de.cas_ual_ty.into;
 
+import java.util.List;
+
+import com.google.common.collect.ImmutableList;
+
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.TickEvent.Phase;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(INeedThemOres.MOD_ID)
 public class INeedThemOres
@@ -24,7 +27,7 @@ public class INeedThemOres
         
         INeedThemOres.itemGroup = new INTOItemGroup(INeedThemOres.MOD_ID);
         
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        MinecraftForge.EVENT_BUS.addListener(this::biomeLoading);
         
         for(INTOMaterial material : INTOMaterial.MATERIALS)
         {
@@ -40,6 +43,21 @@ public class INeedThemOres
             }
         });
         
+        this.overworld = ImmutableList.of(
+            Biome.Category.BEACH,
+            Biome.Category.DESERT,
+            Biome.Category.EXTREME_HILLS,
+            Biome.Category.FOREST,
+            Biome.Category.ICY,
+            Biome.Category.JUNGLE,
+            Biome.Category.MESA,
+            Biome.Category.MUSHROOM,
+            Biome.Category.OCEAN,
+            Biome.Category.PLAINS,
+            Biome.Category.RIVER,
+            Biome.Category.SAVANNA,
+            Biome.Category.SWAMP,
+            Biome.Category.TAIGA);
     }
     
     private void createMaterials()
@@ -57,13 +75,15 @@ public class INeedThemOres
         new INTOMaterial(INeedThemOres.MOD_ID, "Bismuth", 1, 9, 4, 16, 64);
     }
     
-    private void setup(final FMLCommonSetupEvent event)
+    private final List<Biome.Category> overworld;
+    
+    private void biomeLoading(final BiomeLoadingEvent event)
     {
-        for(INTOMaterial material : INTOMaterial.MATERIALS)
+        if(this.overworld.contains(event.getCategory()))
         {
-            for(Biome biome : ForgeRegistries.BIOMES)
+            for(INTOMaterial material : INTOMaterial.MATERIALS)
             {
-                material.registerGeneration(biome);
+                material.registerGeneration(event.getGeneration());
             }
         }
     }

@@ -4,13 +4,13 @@ import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class INTOBlockStates extends BlockStateProvider
 {
-    public INTOBlockStates(DataGenerator gen, String modid, ExistingFileHelper exFileHelper)
+    public INTOBlockStates(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(gen, modid, exFileHelper);
+        super(generator, modid, existingFileHelper);
     }
     
     @Override

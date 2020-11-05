@@ -2,9 +2,9 @@ package de.cas_ual_ty.into.datagen;
 
 import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class INTOItemModels extends ItemModelProvider
 {

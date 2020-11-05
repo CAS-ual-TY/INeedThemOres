@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_nickel",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/nickel"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:nickel_ingot",
+    "count": 9
+  }
+}

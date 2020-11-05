@@ -3,8 +3,8 @@ package de.cas_ual_ty.into.datagen;
 import de.cas_ual_ty.into.INTOMaterial;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class INTOBlockModels extends BlockModelProvider
 {

@@ -17,17 +17,17 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IDataProvider;
 import net.minecraft.data.LootTableProvider;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.DynamicLootEntry;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootParameterSets;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.LootTableManager;
+import net.minecraft.loot.functions.CopyName;
+import net.minecraft.loot.functions.CopyNbt;
+import net.minecraft.loot.functions.SetContents;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.ConstantRange;
-import net.minecraft.world.storage.loot.DynamicLootEntry;
-import net.minecraft.world.storage.loot.ItemLootEntry;
-import net.minecraft.world.storage.loot.LootParameterSets;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraft.world.storage.loot.LootTableManager;
-import net.minecraft.world.storage.loot.functions.CopyName;
-import net.minecraft.world.storage.loot.functions.CopyNbt;
-import net.minecraft.world.storage.loot.functions.SetContents;
 
 public class INTOLootTables extends LootTableProvider
 {
@@ -71,8 +71,8 @@ public class INTOLootTables extends LootTableProvider
                 .acceptFunction(CopyNbt.builder(CopyNbt.Source.BLOCK_ENTITY)
                     .addOperation("inv", "BlockEntityTag.inv", CopyNbt.Action.REPLACE)
                     .addOperation("energy", "BlockEntityTag.energy", CopyNbt.Action.REPLACE))
-                .acceptFunction(SetContents.func_215920_b()
-                    .func_216075_a(DynamicLootEntry.func_216162_a(new ResourceLocation("minecraft", "contents")))));
+                .acceptFunction(SetContents.builderIn()
+                    .addLootEntry(DynamicLootEntry.func_216162_a(new ResourceLocation("minecraft", "contents")))));
         return LootTable.builder().addLootPool(builder);
     }
     

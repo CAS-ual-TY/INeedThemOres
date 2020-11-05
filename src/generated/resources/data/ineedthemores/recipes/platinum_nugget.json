@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ineedthemores_platinum",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/platinum"
+    }
+  ],
+  "result": {
+    "item": "ineedthemores:platinum_nugget",
+    "count": 9
+  }
+}

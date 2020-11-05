@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:bismuth_ingot"
+    ]
+  },
+  "criteria": {
+    "has_bismuth_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ineedthemores:bismuth_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:bismuth_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bismuth_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

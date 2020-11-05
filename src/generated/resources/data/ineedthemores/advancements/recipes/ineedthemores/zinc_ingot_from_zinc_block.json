@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ineedthemores:zinc_ingot_from_zinc_block"
+    ]
+  },
+  "criteria": {
+    "has_zinc_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:storage_blocks/zinc"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ineedthemores:zinc_ingot_from_zinc_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_zinc_block",
+      "has_the_recipe"
+    ]
+  ]
+}
