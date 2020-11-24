@@ -97,7 +97,7 @@ public class INTOMaterial
     
     public INTOMaterial(String modId, String name, int harvestLevel, int veignSize, int triesAmount, int bottom, int top)
     {
-        this(modId, name, FillerBlockType.field_241882_a, harvestLevel, veignSize, triesAmount, bottom, top);
+        this(modId, name, FillerBlockType.BASE_STONE_OVERWORLD, harvestLevel, veignSize, triesAmount, bottom, top);
     }
     
     public void updateFromConfig(ModConfig.ModConfigEvent event)
@@ -134,12 +134,12 @@ public class INTOMaterial
             builder.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                 Feature.ORE.withConfiguration(
                     new OreFeatureConfig(
-                        OreFeatureConfig.FillerBlockType.field_241882_a,
+                        OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
                         this.ore.getDefaultState(),
                         this.veignSize))
-                    .withPlacement(Placement.field_242907_l.configure(
+                    .withPlacement(Placement.RANGE.configure(
                         new TopSolidRangeConfig(this.bottom, this.bottom, this.top)))
-                    .func_242728_a()
+                    .square()
                     .func_242731_b(this.triesAmount));
         }
     }
