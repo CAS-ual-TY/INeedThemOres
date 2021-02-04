@@ -177,8 +177,8 @@ public class INTOMaterial
         {
             builder.push(material.name);
             this.harvestLevel = Config.createSimpleInt(builder, material.modId, "harvest_level", "0 = Wood, 1 = Stone, 2 = Iron, 3 = Diamond, 4+ = Modded Items (See each individual Mod)", material.harvestLevel, 0, 100);
-            this.veignSize = Config.createSimpleInt(builder, material.modId, "veign_size", "The Size of eich Veign", material.veignSize, 0, 100);
-            this.triesAmount = Config.createSimpleInt(builder, material.modId, "tries_amount", "Amount of Tries per Chunk to generate a Veign", material.triesAmount, 0, 100);
+            this.veignSize = Config.createSimpleInt(builder, material.modId, "veign_size", "The Size of each Vein", material.veignSize, 0, 100);
+            this.triesAmount = Config.createSimpleInt(builder, material.modId, "tries_amount", "Amount of Tries per Chunk to generate a Vein", material.triesAmount, 0, 100);
             this.bottom = Config.createSimpleInt(builder, material.modId, "bottom", "Bottom Edge for Overworld Generation", material.bottom, 0, 255);
             this.top = Config.createSimpleInt(builder, material.modId, "top", "Top Edge for Overworld Generation", material.top, 0, 255);
             this.enabled = builder.comment("Enable Generation in the Overworld").translation(material.modId + ".config.enabled").define("enabled", material.enabled);
